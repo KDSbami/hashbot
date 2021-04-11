@@ -1,0 +1,26 @@
+{
+  "name": "hashbot",
+  "version": "1.0.0",
+  "description": "discord bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KDSbami/hashbot.git"
+  },
+  "keywords": [
+    "discord"
+  ],
+  "author": "kdsbami",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KDSbami/hashbot/issues"
+  },
+  "homepage": "https://github.com/KDSbami/hashbot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "nodemon": "^2.0.7"
+  }
+}

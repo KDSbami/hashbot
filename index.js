@@ -40,24 +40,34 @@ client.on('ready', () => {
 client.on('message', message => {
   if (message.content.startsWith(pre) || !message.author.bot ) {
     const request = message.content.slice(pre.length);
-    if(commands[request.split(' ')[0]] !== undefined) {
-      try {
-        message.delete();
-        commands[request.split(' ')[0]](message);
-      } catch(error) {
-        console.log(error);
-        message.reply("I had some issue processing this shit. \n\n\n\n\n\n I SWEAR ITS NOT CORONA :(");
-      }
+    if(message.channel.name !== 'minecraft-logs') {
+      message.delete();
+      message.reply("If you wanna talk to me shawty, head over to minecraft-logs");
+    } else {
+
+      if(commands[request.split(' ')[0]] !== undefined) {
+        try {
+          message.delete();
+          commands[request.split(' ')[0]](message);
+        } catch(error) {
+          console.log(error);
+          message.reply("I had some issue processing this shit. \n\n\n\n\n\n I SWEAR ITS NOT CORONA :(");
+        }
+    } else {
+      message.delete();
+      message.reply("CMMMMONN MAAAAAAAN, wrong command");
+    }
+    
     } 
   }
 
   
   if (message.channel.name === 'minecraft-logs' && !message.author.bot && !message.content.startsWith(pre)) {
-    message.reply("FUCKER MESSAGE SOMEWHERE ELSE. WHY YOU MAKE THIS CLEAN SHIT DIRTY.")
+    message.reply("OI MESSAGE SOMEWHERE ELSE. WHY YOU MAKE THIS CLEAN SHIT DIRTY.")
     message.delete();
   } 
   
-  if(message.author.bot) {
+  if(message.author.bot && message.channel.name === 'minecraft-logs') {
     message.delete({timeout:10000});
   } 
 });

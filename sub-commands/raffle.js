@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 require('dotenv').config({path:__dirname+'/./../.env'});
 const pre = './'
 const raffleCommands = {};
-const hookerURL =' https://discord.com/api/webhooks/832931590006767616/LAtRatTvOE9Kh7XH-M0kN8Qq0kfbt7moIwHH1r_q4mrjJPs4Lyo-sOteznRWKYJ7XjgY';
+const hookerURL =process.env.HOOKER_URL;
 
 const hookHeaders = new fetch.Headers();
 hookHeaders.append("Content-Type", "application/json");

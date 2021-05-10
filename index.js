@@ -40,7 +40,7 @@ client.on('ready', () => {
 client.on('message', message => {
   if (message.content.startsWith(pre) || !message.author.bot ) {
     const request = message.content.slice(pre.length);
-    if(message.channel.name !== 'minecraft-logs') {
+    if(message.channel.name !== 'minecraft-logs' && message.content.startsWith(pre)) {
       message.delete();
       message.reply("If you wanna talk to me shawty, head over to minecraft-logs");
     } else {

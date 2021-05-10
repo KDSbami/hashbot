@@ -67,7 +67,7 @@ client.on('message', message => {
     message.delete();
   } 
   
-  if(message.author.bot && message.channel.name === 'minecraft-logs') {
+  if(message.author.bot && message.channel.name !== 'minecraft-high-rollers') {
     message.delete({timeout:10000});
   } 
 });

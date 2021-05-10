@@ -38,7 +38,7 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-  if (message.content.startsWith(pre) || !message.author.bot ) {
+  if (message.content.startsWith(pre) && !message.author.bot ) {
     const request = message.content.slice(pre.length);
     if(message.channel.name !== 'minecraft-logs' && message.content.startsWith(pre)) {
       message.delete();
